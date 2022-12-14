@@ -25,7 +25,7 @@ jobs:
         run: docker buildx build -f dbs/mongo/4.0/Dockerfile -t paoliniluis/qa-databases:mongo-sample-4 --push --compress --no-cache --platform linux/arm64/v8,linux/amd64 .
       - name: Create mongo 5 container image
         run: docker buildx build -f dbs/mongo/5.0/Dockerfile -t paoliniluis/qa-databases:mongo-sample-5 --push --compress --no-cache --platform linux/arm64/v8,linux/amd64 .
-        - name: Create mongo 5 container image
+      - name: Create mongo 5 container image
         run: docker buildx build -f dbs/mongo/6.0/Dockerfile -t paoliniluis/qa-databases:mongo-sample-5 --push --compress --no-cache --platform linux/arm64/v8,linux/amd64 .
     
   build-mssql:
@@ -43,8 +43,6 @@ jobs:
         with:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
-      # - name: Create mssql 2017 image
-      #   run: docker buildx build -f dbs/mssql/2017/Dockerfile -t paoliniluis/qa-databases:mssql-sample-2017 --push --compress --no-cache .
       - name: Create mssql 2017 image
         run: docker buildx build -f dbs/mssql/2019/Dockerfile -t paoliniluis/qa-databases:mssql-sample-2017 --push --compress --no-cache .
       - name: Create mssql 2019 image
