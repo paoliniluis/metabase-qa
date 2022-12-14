@@ -1,6 +1,6 @@
 FROM mcr.microsoft.com/mssql/server:2019-latest
 
-ENV ACCEPT_EULA=Y SA_PASSWORD=Metasample123 MSSQL_PID=Standard
+ENV ACCEPT_EULA=Y MSSQL_SA_PASSWORD=Metasample123 MSSQL_PID=Standard
 
 COPY dbs/mssql/data/sample_data.sql.gz /home/
 USER root

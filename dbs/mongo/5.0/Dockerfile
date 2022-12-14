@@ -1,8 +1,4 @@
-<<<<<<< HEAD
-FROM mongo:5.0
-=======
 FROM mongo:5
->>>>>>> 5ef6737 (Intermediate commit)
 
 # We use a standard set of database names and users for our sample images
 ENV MONGO_INITDB_ROOT_USERNAME=metabase MONGO_INITDB_ROOT_PASSWORD=metasample123 MONGO_INITDB_DATABASE=sample
