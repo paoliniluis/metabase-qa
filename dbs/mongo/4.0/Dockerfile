@@ -1,7 +1,7 @@
 FROM mongo:4.4
 
 # We use a standard set of database names and users for our sample images
-ENV MONGO_INITDB_ROOT_USERNAME=metabase MONGO_INITDB_ROOT_PASSWORD=metasample123 MONGO_INITDB_DATABASE=sample
+ENV MONGO_INITDB_ROOT_USERNAME=metabase MONGO_INITDB_ROOT_PASSWORD=metasample123 MONGO_INITDB_DATABASE=sample 
 
 # We copy in our initialization data
 COPY dbs/mongo/data/*.tsv dbs/mongo/data/load.sh /docker-entrypoint-initdb.d/
