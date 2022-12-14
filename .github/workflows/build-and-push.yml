@@ -45,10 +45,10 @@ jobs:
           password: ${{ secrets.DOCKERHUB_TOKEN }}
       - name: Create mssql 2017 image
         run: docker buildx build -f dbs/mssql/2019/Dockerfile -t paoliniluis/qa-databases:mssql-sample-2017 --push --compress --no-cache .
-      # - name: Create mssql 2019 image
-      #   run: docker buildx build -f dbs/mssql/2019/Dockerfile -t paoliniluis/qa-databases:mssql-sample-2019 --push --compress --no-cache .
+      - name: Create mssql 2019 image
+        run: docker buildx build -f dbs/mssql/2019/Dockerfile -t paoliniluis/qa-databases:mssql-sample-2019 --push --compress --no-cache .
       - name: Create mssql 2022 image
-        run: docker buildx build -f dbs/mssql/2019/Dockerfile -t paoliniluis/qa-databases:mssql-sample-2022 --push --compress --no-cache .
+        run: docker buildx build -f dbs/mssql/2022/Dockerfile -t paoliniluis/qa-databases:mssql-sample-2022 --push --compress --no-cache .
 
   build-mysql:
     runs-on: ubuntu-22.04
@@ -90,4 +90,4 @@ jobs:
       - name: Create postgres 14 image
         run: docker buildx build -f dbs/postgres/14/Dockerfile -t paoliniluis/qa-databases:postgres-sample-14 --push --compress --no-cache --platform linux/arm64/v8,linux/amd64 .
       - name: Create postgres 15 image
-        run: docker buildx build -f dbs/postgres/14/Dockerfile -t paoliniluis/qa-databases:postgres-sample-15 --push --compress --no-cache --platform linux/arm64/v8,linux/amd64 .
+        run: docker buildx build -f dbs/postgres/15/Dockerfile -t paoliniluis/qa-databases:postgres-sample-15 --push --compress --no-cache --platform linux/arm64/v8,linux/amd64 .
